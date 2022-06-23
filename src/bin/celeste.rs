@@ -18,7 +18,8 @@ fn assets_path() -> String {
 }
 
 fn main() {
-    runty8::run_app::<GameState>(assets_path())
+    // runty8::run_app::<GameState>(assets_path())
+    runty8::run_app2!("celeste", GameState);
 }
 
 struct GameState {
@@ -1952,7 +1953,7 @@ impl Fruit {
             player.djump = max_djump;
             // sfx_timer=20
             // sfx(13)
-            got_fruit[1 + level_index(room) as usize] = true;
+            got_fruit[level_index(room) as usize] = true;
 
             UpdateAction::noop().destroy().push(Object::init(
                 got_fruit,
@@ -2506,7 +2507,7 @@ impl FlyFruit {
             player.djump = max_djump;
             // sfx_timer = 20;
             // sfx(13);
-            got_fruit[1 + level_index(room)] = true;
+            got_fruit[level_index(room)] = true;
             update_action.push_mut(Object::init(
                 got_fruit,
                 room,

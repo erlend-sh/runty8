@@ -77,7 +77,7 @@ impl Map {
 
 impl Map {
     // TODO: Make sure this works
-    pub(crate) fn deserialize(str: &str) -> Result<Self, String> {
+    pub fn deserialize(str: &str) -> Result<Self, String> {
         let map: [SpriteId; Self::MAP_SIZE] = str
             .split_ascii_whitespace()
             .map(|num| u8::from_str_radix(num, 16).unwrap())

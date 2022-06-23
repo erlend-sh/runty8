@@ -19,7 +19,7 @@ use glium::uniforms::{MagnifySamplerFilter, Sampler};
 use glium::{glutin, Program, Surface};
 use glium::{uniform, Frame};
 
-pub(crate) fn run_app<T: AppCompat + 'static>(
+pub fn run_app<T: AppCompat + 'static>(
     assets_path: String,
     map: Map,
     sprite_flags: Flags,
